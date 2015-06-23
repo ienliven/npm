@@ -1,5 +1,5 @@
 #!/bin/bash
-npmver=$(npm -v)
+npmver=$(perl -E "say q{$npm_config_user_agent} =~ m{/(\S+)}")
 
 if semver -r ^3.0.0-0 $npmver > /dev/null; then
 	echo "Packaging with $npmver"
